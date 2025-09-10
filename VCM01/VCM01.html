@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">VCM01 Campus Connect</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Events</a>
+        <a href="#">Speakers</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to VCM01 Campus Events</h1>
+      <p>Find and join the best events around you.</p>
+      <a class="btn-primary" href="#">Get Started</a>
+
+      <!-- Countdown 1 -->
+      <div id="countdown" class="countdown-wrapper">
+        <div class="countdown-box">
+          <span id="days">0</span>
+          <div>Days</div>
+        </div>
+        <div class="countdown-box">
+          <span id="hours">00</span>
+          <div>Hours</div>
+        </div>
+        <div class="countdown-box">
+          <span id="minutes">00</span>
+          <div>Minutes</div>
+        </div>
+        <div class="countdown-box">
+          <span id="seconds">00</span>
+          <div>Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info section -->
+  <section class="info">
+    <div class="container grid-2">
+      <div>
+        <h2>Experience the Energy of Campus Connect</h2>
+        <p>Join thousands of fans and feel the beat! EM4U brings you closer to the most exciting concerts and festivals happening around the world.</p>
+        <ul>
+          <li>Discover concerts by genre and location</li>
+          <li>Exclusive early bird offers and VIP access</li>
+          <li>Safe and easy online booking</li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1200&q=80" alt="Concert">
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Countdown Section -->
+  <section class="event-countdown">
+    <div class="container">
+      <h2>Big Event Starts Soon</h2>
+      <p>Mark your calendars and join us for an unforgettable experience!</p>
+      <div id="countdown2" class="countdown-wrapper">
+        <div class="countdown-box">
+          <span id="days2">0</span>
+          <div>Days</div>
+        </div>
+        <div class="countdown-box">
+          <span id="hours2">00</span>
+          <div>Hours</div>
+        </div>
+        <div class="countdown-box">
+          <span id="minutes2">00</span>
+          <div>Minutes</div>
+        </div>
+        <div class="countdown-box">
+          <span id="seconds2">00</span>
+          <div>Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker Blog Grid -->
+  <section class="speakers">
+    <div class="container">
+      <h2 style="text-align:center">Meet Our Key Speakers</h2>
+      <div class="speaker-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80" alt="Speaker 1">
+          <div class="card-body">
+            <h3>Dr. Sarah Johnson</h3>
+            <p>AI Researcher, MIT</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=600&q=80" alt="Speaker 2">
+          <div class="card-body">
+            <h3>Michael Tan</h3>
+            <p>Entrepreneur & Investor</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Speaker 3">
+          <div class="card-body">
+            <h3>Emma Wilson</h3>
+            <p>Music Producer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Countdown scripts
+    function initCountdown(targetDate, ids){
+      function update(){
+        var now = new Date();
+        var diff = targetDate - now;
+        if(diff<=0){return}
+        var secs=Math.floor(diff/1000);
+        var days=Math.floor(secs/86400);secs-=days*86400;
+        var hrs=Math.floor(secs/3600);secs-=hrs*3600;
+        var mins=Math.floor(secs/60);var s=secs-mins*60;
+        document.getElementById(ids.days).textContent=days;
+        document.getElementById(ids.hours).textContent=String(hrs).padStart(2,'0');
+        document.getElementById(ids.minutes).textContent=String(mins).padStart(2,'0');
+        document.getElementById(ids.seconds).textContent=String(s).padStart(2,'0');
+      }
+      update();setInterval(update,1000);
+    }
+    initCountdown(new Date(2028,1,14,9,0,0),{days:'days',hours:'hours',minutes:'minutes',seconds:'seconds'});
+    initCountdown(new Date(2028,1,20,18,0,0),{days:'days2',hours:'hours2',minutes:'minutes2',seconds:'seconds2'});
+  </script>
+</body>
+</html>
